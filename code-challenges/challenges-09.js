@@ -114,13 +114,17 @@ return result;
 const employeesBonus = (arr) => {
     // write your code here
     let result=[];
+    let temp;
     arr.forEach(element => {
-        (element.workHours>8)?element.salary+=100:
-        element.salary+=50;
+        (element.workHours>8)?temp=parseInt(element.salary)+100:
+        temp=parseInt(element.salary)+50;
+        element.salary=`${temp}$`;
         result.push(element);
             
         
     })
+
+    return result;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -144,7 +148,7 @@ const mostExpensive = (budget, mouseArray, keyBoardArray) => {
     mouseArray.forEach(element=>{
         keyBoardArray.forEach(keyboardElement =>{
             if(element+keyboardElement<=200){
-                return `You can buy mouse and keyboard with cost: ${element} and ${keyboardElement} in sequence.`;
+                return element+keyBoardArray;
             }
         })
     })
